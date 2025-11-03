@@ -20,8 +20,9 @@ public class EX3_1 {
             boolean is_prime = true;
             pd = 2;
             while(pd <= current/2){
-                if((current % pd) == 0){
+                if ((current % pd) == 0) {
                     is_prime = false;
+                    break;
                 }
                 pd++;
             }
