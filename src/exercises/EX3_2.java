@@ -3,7 +3,7 @@ package exercises;
 public class EX3_2 {
     public static void main(String[] args){
         int amount,c,rate,years,n,count;
-        double r,power,payment,total;
+        float r,power,payment,total;
 
         System.out.println("input amount to be financed: ");
         amount = Console.readInt();
@@ -17,7 +17,7 @@ public class EX3_2 {
         power = 1;
         n = years * 12;
         c = amount;
-        r = (double) rate / 100;
+        r = (float) rate / 100;
         count = 1;
 
         while(count <= n){
