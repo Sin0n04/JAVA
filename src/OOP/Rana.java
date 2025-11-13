@@ -69,7 +69,9 @@ public class Rana {
         if(Isfat()){
             while(count <= h && calorias > 0){
 
-                this.calorias -= 100;
+                if(this.calorias >= 100){
+                    this.calorias -= 100;
+                }
 
                 System.out.print(count);
 
