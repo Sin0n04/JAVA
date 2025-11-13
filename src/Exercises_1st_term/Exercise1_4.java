@@ -1,5 +1,5 @@
 
-package exercises;
+package Exercises_1st_term;
 
 public class Exercise1_4 {
     public static void main(String[] args) {
