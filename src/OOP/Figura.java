@@ -14,11 +14,6 @@ public class Figura {
 
     }
     public boolean draw(){
-        int count = 1;
-
-        while(count <= this.dim){
-
-            count++;
-        }
+        return(this.dim % 2 != 0);
     }
 }
