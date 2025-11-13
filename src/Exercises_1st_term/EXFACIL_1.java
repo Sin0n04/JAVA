@@ -1,4 +1,4 @@
-package exercises;
+package Exercises_1st_term;
 
 public class EXFACIL_1 {
     public static void main(String[] args){

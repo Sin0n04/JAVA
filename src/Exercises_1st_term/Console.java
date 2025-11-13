@@ -1,4 +1,4 @@
-package exercises;
+package Exercises_1st_term;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
