@@ -1,11 +1,11 @@
 package packhouses;
 
 public class House {
-    public double area;
-    public String address;
-    public char type;
+    double area;
+    String address;
+    char type;
 
-    public void show(){
+    void show(){
         System.out.println();
         switch (this.type){
             case 'f':
@@ -18,7 +18,7 @@ public class House {
     }
 
 
-    public double giveMeTax(){
+    double giveMeTax(){
         double tax = 0;
         if (this.area <= 60){
             return tax;
@@ -33,14 +33,14 @@ public class House {
     }
 
 
-    public boolean canBeSold(){
+    boolean canBeSold(){
         if(this.type == 'd'){
             return true;
         }
         return (this.type == 'f' && this.area >100);
     }
 
-    public boolean isSimilar(House other){
+    boolean isSimilar(House other){
         return (this.type == other.type&& (this.area- other.area >(-10)&& this.area- other.area < 10));
 
     }
