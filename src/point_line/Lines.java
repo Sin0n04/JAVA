@@ -41,5 +41,15 @@ public class Lines {
         return Math.sqrt((c1*c1)+(c2*c2));
     }
 
+    Points highestPoint(){
+        if (sp.y > ep.y){
+            return sp;
+        }
+        if(sp.y < ep.y){
+            return ep;
+        }
+        return null;
+    }
+
 
 }
