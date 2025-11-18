@@ -1,5 +1,7 @@
 package ex_3;
 
+import java.util.Scanner;
+
 public class StaticLibrary {
 	
 	
@@ -11,14 +13,28 @@ public class StaticLibrary {
 			}
 		}
 	}
+
+    static int charType(char l){
+        if( l >=  )
+    }
+
+
 	
 	public static void main(String[] args) {
-		int n1,n2;
-		
-		n1 = Console.readInt();
-		n2 = Console.readInt();
-		
-		StaticLibrary.showMultipleOf5(n1, n2);
+		int n1 = 1,n2 = 1;
+
+        while(n1 != 0 && n2 != 0){
+            System.out.println("input two numbers: ");
+            n1 = Console.readInt();
+            n2 = Console.readInt();
+
+            StaticLibrary.showMultipleOf5(n1,n2);
+        }
+
+
+
+
+
 	}
 
 }
