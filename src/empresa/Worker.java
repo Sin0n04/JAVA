@@ -20,7 +20,7 @@ public class Worker extends Person{
 
     @Override
     public String  toString(){
-        return "name: " + this.getName() + " weight: " + this.getWeight() + " money: " + this.money;
+        return "name: " + this.getName() + " weight: " + this.getWeight() + " money: " + this.money + " phone number: " + phone.getNumber() + " battery: " + phone.getBattery();
     }
 
     public int getMoney(){

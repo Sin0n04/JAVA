@@ -19,6 +19,14 @@ public class MobilePhone {
         }
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public int getBattery() {
+        return battery;
+    }
+
     public void setNumber(String number) {
         this.number = number;
     }
