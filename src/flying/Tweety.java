@@ -1,7 +1,7 @@
 package flying;
 
 public class Tweety extends Canary {
-	int movieappearance;
+	private int movieappearance;
 	
 	Tweety(int a, char s, double size, int mo){
 		super(s,a,size);
