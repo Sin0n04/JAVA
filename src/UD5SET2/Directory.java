@@ -14,7 +14,7 @@ public class Directory {
         System.out.println("name of the directory: " + this.name + " , size of the directory in bytes: " + this.size);
     }
 
-    private int levels() {
+    public int levels() {
         int levels = 0;
         for(int i = 0; i < this.name.length();i++){
             if(this.name.charAt(i)== '/'){
@@ -24,7 +24,7 @@ public class Directory {
         return levels + 1;
     }
 
-    private String lastLevel(){
+    public String lastLevel(){
         String str = this.name;
         for(int i = str.length() - 1 ; i >= 0 ; i-- ){
             if(str.charAt(i) == '/'){
@@ -33,6 +33,18 @@ public class Directory {
             }
         }
         return str;
+    }
+
+    private boolean illegalChars(){
+        String str = this.name;
+        boolean result = false;
+        for(int i = 0 ; i < str.length();i++){
+          char c = str.charAt(i);
+          if(c == '@' || c == '#' || c == '$'){
+              return true;
+          }
+        }
+        return false;
     }
 
 
