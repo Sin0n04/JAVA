@@ -47,6 +47,37 @@ public class Directory {
         return false;
     }
 
+    public String isValidir(){
+        String name = this.name;
+        int count = 1;
+        if (name.length()<= MAXCHAR && name.length() >= 2){
+            if(this.illegalChars()){
+                return "This directory name is not valid because it contains illegal characters";
+            }
+            else{
+                for(int i = 1 ; i < name.length() -1; i++){
+                    if(name.charAt(i) =='/' && name.charAt(i - 1) == '/'){
+                        return "This directory is not valid because it has repetitive // ";
+                    }
+                }
+                if( ( ((int)name.charAt(0) >= 97 && (int)name.charAt(0) <= 122)||(int)name.charAt(0) >= 65 && (int)name.charAt(0) <= 90) && (int)name.charAt(1) == 58){
+                    return "OK";
+                }
+                return "This directory is invalid because it has an invalid disc name";
+            }
+        }
+        if(name.length() < 2){
+            return "This directory is not valid because it has less than 2 chars.";
+        }
+
+        return "This directory is not valid because it exceeds the maximum character limit";
+
+    }
+
+    public void compact(){}
+
+
+
 
 
 }
