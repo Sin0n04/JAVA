@@ -74,7 +74,18 @@ public class Directory {
 
     }
 
-    public void compact(){}
+    public void compactDir(){
+
+            // Remove whitespace before and after slashes
+            this.name = this.name.replaceAll("\\s*/\\s*", "/");
+
+            // Remove leading and trailing whitespace
+            this.name = this.name.trim();
+
+            // Convert to lowercase
+            this.name = this.name.toLowerCase();
+
+    }
 
 
 
