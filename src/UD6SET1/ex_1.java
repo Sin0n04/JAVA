@@ -12,7 +12,7 @@ public class ex_1 {
     public static void main(String[] args){
         final int N = 10;
         float grade,max_grade = 0, gradecount = 0;
-        float[] grades = new float[N];
+        float[] grades = new float[N]; // float[10]
 
         for (int i = 0 ; i < N; i++){
             System.out.println("input grade...");

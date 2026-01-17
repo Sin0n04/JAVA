@@ -1,5 +1,6 @@
 package point_line;
 
+
 public class Points {
         double x,y;
 
@@ -34,6 +35,7 @@ public class Points {
     }
 
     public static void main(String[] args){
+
 
     }
 }
