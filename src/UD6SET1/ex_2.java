@@ -5,9 +5,9 @@ public class ex_2 {
 
        String[] arr = new String[100];
        
+       int usefullpos = 0;
        int i = 0;
        while((arr[i] != "QUIT" || arr[i] != "quit") || i < 100 ) {
-    	   System.out.println("input String... ");
     	   arr[i] = Console.readString();
     	   i++;
        }
@@ -26,4 +26,3 @@ public class ex_2 {
 
     }
 }
-	

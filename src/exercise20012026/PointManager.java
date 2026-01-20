@@ -50,7 +50,7 @@ public class PointManager {
 	
 	
 	public void compact() {
-		//still buggy
+		//still wrong... Check the logic..
 		Point[] compacted = new Point[useful_pos];
 		
 		for(int i = 0 ; i < this.points.length ;i++) {
