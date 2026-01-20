@@ -1,10 +1,8 @@
 package test;
 
-public class insertSort {
+public class Sorting {
 
-	public static void main(String[] args) {
-		int[] arr = {72,13,20,4,6,239,12,65,25,17};
-		
+	public static int[] insertSort(int[] arr)  {
 		int n = arr.length;
 		for(int i = 1 ; i < n ; i++) {
 			int insert_index = i;
@@ -24,7 +22,7 @@ public class insertSort {
 			System.out.print(value + " | ");
 		}
 		
-		
+		return arr;
 	}
 
 }
