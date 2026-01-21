@@ -7,6 +7,8 @@ public class ex_7 {
         int[] arrayright = new int[10];
 
 
+
+
     }
 
 }
