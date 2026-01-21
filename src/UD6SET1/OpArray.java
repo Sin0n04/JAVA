@@ -58,6 +58,9 @@ public class OpArray {
     public boolean isPrime(int num_tocheck){
         boolean isPrime = false;
 
+        if(num_tocheck <= 1)
+            return false;
+
         if(num_tocheck == 2)
             return isPrime = true;
 
@@ -75,8 +78,17 @@ public class OpArray {
 
 
     public int primeIndex(){
-        return 1;
+
+        for (int i = 0 ; i < arr.length ; i++){
+            if(isPrime(arr[i])){
+                return i;
+            }
+        }
+
+        return -1;
     }
+
+
 
 
 
