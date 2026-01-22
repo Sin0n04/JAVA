@@ -53,7 +53,7 @@ public class RectangleManager {
     //exercise half done...
 
 
-		 Public Rectangle[] fusionArray(RectangleManager other){
+		 public Rectangle[] fusionArray(RectangleManager other){
 
 				Rectangle[] fusion = new Rectangle[this.arr.length() + other.arr.length()];
 				int z = 0;
