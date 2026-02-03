@@ -26,7 +26,48 @@ public class Exercise1 {
 			}
 		}
 	}
-	
+
+    public static int highAvg(int[][] other){
+        double maxavg = 0;
+        int maxsub = 0;
+        //checking every column
+        for (int i = 0; i < other[0].length; i++) {
+            //checking every row
+            double sum = 0;
+            for (int j = 0; j < other.length; j++) {
+                sum += other[j][i];
+            }
+            double avg = sum / other.length;
+
+            if(avg > maxavg){
+                maxavg = avg;
+                maxsub = i;
+            }
+        }
+
+        return maxsub + 1;
+    }
+
+
+    public static double[] fails(int[][] other){
+        double[] grades = new double[other.length];
+        for (int i = 0; i < other.length; i++) {
+            double sum = 0;
+            for (int j = 0; j < other[0].length; j++) {
+                if(other[i][j] < 5){
+                    sum++;
+                }
+            }
+            grades[i] = (sum * 100) / other.length;
+        }
+        return grades;
+    }
+
+
+    public static int[][] merits(){
+        return null;
+    }
+
 	
 	
 
