@@ -64,8 +64,39 @@ public class Exercise1 {
     }
 
 
-    public static int[][] merits(){
-        return null;
+    public static int[][] merits(int[][] arr){
+        int[][] merits = new int[arr.length][4];
+
+        for (int i = 0; i < merits.length; i++) {
+            int fails = 0;
+            int pass = 0;
+            int good = 0;
+            int excellent = 0;
+            for (int j = 0; j < arr[0].length; j++) {
+                int grade = arr[i][j];
+                if(grade < 5){
+                    fails++;
+                }
+                else if (grade < 7) {
+                    pass++;
+                } else if (grade < 9) {
+                    good++;
+
+                }
+                else {
+                    excellent++;
+                }
+            }
+
+            merits[i][0] = fails;
+            merits[i][1] = pass;
+            merits[i][2] = good;
+            merits[i][3] = excellent;
+
+        }
+
+
+        return merits;
     }
 
 	
