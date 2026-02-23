@@ -7,6 +7,7 @@ public class Matrix1 {
 
    public Matrix1(){
         this.arr = new int[NR][NC];
+        loadByRows(this.arr);
    }
 
     public Matrix1(int row, int col){
@@ -59,7 +60,53 @@ public class Matrix1 {
 
     }
 
-    public void swapRows(int row1, int row2){
+    public boolean swapRows(int row1, int row2){
+       int[] temp = this.arr[row1 -1];
 
+       if((row1 < 0 || row2 < 0) || (row1 > this.arr.length + 1 || row2 > arr.length + 1)){
+           return false;
+       }
+       else{
+           this.arr[row1 - 1] = this.arr[row2 - 1];
+           this.arr[row2 - 1] = temp;
+           return true;
+       }
+
+    }
+
+
+    public boolean swapColumns(int col1 , int col2){
+       if(col1==col2){
+           return false;
+       }
+
+        for (int i = 0; i < this.arr.length; i++) {
+            int temp = this.arr[i][col1];
+
+            this.arr[i][col1] = this.arr[i][col2];
+            this.arr[i][col2] = temp;
+        }
+        return true;
+    }
+
+    public int[][] transpose(){
+        int rows = this.arr.length;
+        int cols = this.arr[0].length;
+       int[][] result = new int[cols][rows];
+
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows ; j++) {
+                result[i][j] = this.arr[j][i];
+
+            }
+        }
+
+
+
+       return result;
+    }
+
+    public int[][] getArr(){
+       return this.arr;
     }
 }
