@@ -6,8 +6,15 @@ public class Matrix1 {
 
 
    public Matrix1(){
-        this.arr = new int[NR][NC];
-        loadByRows(this.arr);
+        if(this instanceof SquareMatrix){
+            this.arr = new int[NC][NC];
+            loadByRows(this.arr);
+            System.out.println("a Square matrix is being created");
+        }
+        else{
+            this.arr = new int[NR][NC];
+            loadByRows(this.arr);
+        }
    }
 
     public Matrix1(int row, int col){
@@ -19,6 +26,10 @@ public class Matrix1 {
         else {
             this.arr = new int[row][col];
             loadByRows(this.arr);
+        }
+
+        if (this instanceof SquareMatrix){
+            System.out.println("Square matrix being created");
         }
 
     }
@@ -108,5 +119,9 @@ public class Matrix1 {
 
     public int[][] getArr(){
        return this.arr;
+    }
+
+    public void setArr(int[][] matrix){
+       this.arr = matrix;
     }
 }
