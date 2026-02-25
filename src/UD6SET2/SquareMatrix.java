@@ -97,6 +97,7 @@ public class SquareMatrix extends Matrix1 {
                 }
             }
         }
+
         return true;
     }
 
