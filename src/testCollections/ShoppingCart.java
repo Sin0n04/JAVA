@@ -20,6 +20,7 @@ public class ShoppingCart {
 		while(it.hasNext()) {
 			
 		}
+        return 3;
 	}
 	
 	public void removeExpensive(double topPrice) {
