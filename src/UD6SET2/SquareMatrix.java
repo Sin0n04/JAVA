@@ -75,7 +75,7 @@ public class SquareMatrix extends Matrix1 {
         int secDiag = 0;
         for (int i = 0; i < matrix.length; i++) {
            secDiag = matrix[i][matrix.length - 1 - i];
-           //important formula to travrse the second diagonal [n - 1 - i] where n is the length fo the matrix
+           //important formula to traverse the second diagonal [n - 1 - i] where n is the length of the matrix
         }
         if (secDiag != sum)
             return false;
