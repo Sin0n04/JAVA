@@ -50,8 +50,6 @@ public class Point {
     
     
     public double distance00() {
-    	double result ;
-    	result = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-    	return result;
+    	return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
     }
 }
