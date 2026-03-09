@@ -59,7 +59,19 @@ public class Cinema {
 	
 	public void addMovie(Movie other , int Rnum) {
 		
-		
+		for(int i = 0 ; i < this.rooms.length ; i++) {
+			if(i == Rnum && rooms[i] == null) {
+				for(Movie m : movies) {
+					if(m.equals(other)) {
+						System.out.println("the movie is already in the cinema.... at showroom: " + this.roomOfMovie(other.getName(), other.getDuration(), other.getYear()));
+					}
+				}
+				
+				rooms[i] = other;
+				movies.add(i, other);
+			}
+			
+		}
 		
 	}
 	
