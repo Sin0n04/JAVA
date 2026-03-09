@@ -12,10 +12,13 @@ public class Movie {
 		this.duration = dur;
 		this.year = year;
 	}
-	
-	
-	
-	@Override
+
+    public Movie() {
+
+    }
+
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

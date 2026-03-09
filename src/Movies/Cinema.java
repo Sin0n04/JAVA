@@ -1,5 +1,7 @@
 package Movies;
 
+import UD6SET2.Console;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -15,9 +17,6 @@ public class Cinema {
 		this.rooms = new Movie[nRooms];
 		this.movies = new ArrayList<Movie>();
 
-		for(Movie m : movies) {
-			rooms[movies.indexOf(m)] = m;
-		}
         useful = 0;
         for(Movie m : rooms ){
             if(m == null){
@@ -119,11 +118,55 @@ public class Cinema {
 
     //Method freeRooms, that returns an ArrayList with the Numbers of the cinema’s free rooms
     public ArrayList<Integer> freeRooms(){
+        ArrayList<Integer> free = new ArrayList<Integer>();
+
+        for (int i = 0; i < this.rooms.length; i++) {
+            if (rooms[i] == null){
+                free.add(i);
+            }
+        }
+        return free;
+
+    }
+
+    //Method changeRoom, that receives a movie. If the movie is found, the method displays in which room it
+    //is, and asks the user to which other room he wants to change it (must validate this until the user provide
+    //a free and existent room). The film is finally moved to another room.
+
+    public void changeRoom(Movie other){
+        Movie toChange = new Movie();
+        for (int i = 0; i < this.rooms.length; i++) {
+            if(this.rooms[i].equals(other)){
+                toChange = rooms[i];
+                break;
+            }
+        }
+
+        System.out.println("The movie inputted is in room: " + this.roomOfMovie(toChange.getName(), toChange.getDuration(), toChange.getYear()));
+
+        System.out.println("to what room ---> ");
+        int room = Console.readInt();
+        ArrayList<Integer> freeR = this.freeRooms();
+
+        while (!freeR.contains(room) || rooms[room] != null){
+            System.out.println("Input an existing and free room: ");
+            room = Console.readInt();
+        }
+
+        rooms[room] = other;
+        System.out.println("Done....");
+
+
 
 
     }
 
+    public void resetCinema(){
+        this.movies.clear();
+        this.rooms = new Movie[this.rooms.length];
+    }
+
 	
-	
+	//Method moviesShorterThan, that returns an arrayList made up by names of films lasting less than the duration received as an argument (minutes)
 
 }
