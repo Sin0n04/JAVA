@@ -9,20 +9,12 @@ public class Cinema {
 	public String name;
 	public ArrayList<Movie> movies;
 	public Movie[] rooms;
-	public int useful;
 	
 	
 	public Cinema(String name ,int nRooms ) {
 		this.name = name;
 		this.rooms = new Movie[nRooms];
 		this.movies = new ArrayList<Movie>();
-
-        useful = 0;
-        for(Movie m : rooms ){
-            if(m == null){
-                useful++;
-            }
-        }
 	}
 	
 	
@@ -69,8 +61,6 @@ public class Cinema {
 				rooms[i] = other;
 				movies.add(i, other);
                 System.out.println("movie added...");
-                //gotta check for indexoutof    bounds for the array...
-                useful++;
 			}
             else
                 System.out.println("showroom occupied...");
@@ -108,7 +98,6 @@ public class Cinema {
                 int i = movies.indexOf(z);
                 rooms[i] = null;
                 it.remove();
-                this.useful--;
             }
         }
 
@@ -168,5 +157,32 @@ public class Cinema {
 
 	
 	//Method moviesShorterThan, that returns an arrayList made up by names of films lasting less than the duration received as an argument (minutes)
+
+    public ArrayList<Movie> moviesShorterThan(int dur){
+        ArrayList<Movie> shorter = new ArrayList<Movie>();
+
+        for (Movie m : this.movies){
+            if (m.getDuration() < dur){
+                shorter.add(m);
+            }
+        }
+
+        return shorter;
+    }
+
+    //Override the previous method so that it receives 2 arguments: the first one representing hours, second one representing minutes
+
+    public ArrayList<Movie> moviesShorterThan(int h, int mins){
+        int dur = (h*60) + mins;
+        ArrayList<Movie> shorter = new ArrayList<Movie>();
+
+        for (Movie m : this.movies){
+            if (m.getDuration() < dur){
+                shorter.add(m);
+            }
+        }
+
+        return shorter;
+    }
 
 }
