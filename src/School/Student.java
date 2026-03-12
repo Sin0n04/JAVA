@@ -2,7 +2,7 @@ package School;
 
 import java.time.LocalDate;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private LocalDate birthday;
     private float[] grades;
@@ -117,4 +117,35 @@ public class Student {
     public String getName() {
         return name;
     }
+
+
+
+
+	@Override
+	public int compareTo(Student o) {
+		String n = this.name;
+		String other = o.name;
+		Character c = 'c';
+		
+		if(n.equals(o)) {
+			if(this.birthday.equals(o.birthday)) {
+				return 0;
+			}
+			else {
+				if(this.birthday.isBefore(o.birthday)) {
+					return 1;
+				}
+			}
+			
+			return -1;
+			
+		}
+		else {
+			if((int)(n.charAt(0)) > (int)(other.charAt(0)) )
+				return 1;
+		}
+		
+		return -1;
+		
+	}
 }
