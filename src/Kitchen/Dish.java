@@ -1,6 +1,7 @@
 package Kitchen;
 
 import java.util.HashSet;
+import java.util.Objects;
 
 public class Dish {
     private String name;
@@ -22,6 +23,18 @@ public class Dish {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Dish dish = (Dish) o;
+        return Objects.equals(getName(), dish.getName()) && Objects.equals(getIngredients(), dish.getIngredients());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getIngredients());
     }
 
     public HashSet<Ingredient> getIngredients() {
