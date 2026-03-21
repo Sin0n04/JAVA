@@ -60,4 +60,54 @@ public class Chef {
 
     }
 
+    //check again later...
+    public void addRandomDish(String name, int n){
+        HashSet<Ingredient> toAdd = new HashSet<>(n);
+        for (int i = 0; i < n;) {
+            int index = (int)(Math.random() * this.ingredients.size());
+            Ingredient in = this.ingredients.get(index);
+            if (!toAdd.contains(in)){
+                toAdd.add(in);
+                i++;
+            }
+        }
+
+        Dish random = new Dish(name,toAdd);
+
+        if (this.dishes.containsKey(name)){
+            System.out.println("Dish already exists...");
+        }
+        else {
+            if (this.dishes.containsValue(random)) {
+                System.out.println("A dish with the same ingredients already exists...");
+                return;
+            }
+
+        }
+
+        this.dishes.put(name,random);
+    }
+
+    //double ccheck...
+    public void removeCalories(){
+        int n = 650;
+
+        Iterator<String> it =  this.dishes.keySet().iterator();
+        String key= "";
+
+        while(it.hasNext()) {
+            key = it.next();
+            Dish d = this.dishes.get(key);
+
+            for (Ingredient i : d.getIngredients()){
+                if (i.getNcal() >= n){
+                    this.dishes.get(key).getIngredients().remove(i);
+                }
+            }
+
+
+
+        }
+    }
+
 }
