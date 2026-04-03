@@ -14,6 +14,7 @@ public class Point3D extends Point {
         String[] parts = input.split("-");
         if (parts.length != 3){
             System.out.println("Wrong format");
+            return;
         }
 
         this.z = Double.parseDouble(parts[2]);
