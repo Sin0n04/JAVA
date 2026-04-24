@@ -39,4 +39,8 @@ public class SalesMan implements Serializable {
     public String getName() {
         return name;
     }
+
+    public Mobilephone getPhone() {
+        return phone;
+    }
 }

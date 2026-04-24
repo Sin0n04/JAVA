@@ -55,6 +55,7 @@ public class SalesManagement {
                 }
 
             }
+            ois.close();
 
             for (SalesMan s : list){
                 if (s.getName().equals(name)){
@@ -66,4 +67,55 @@ public class SalesManagement {
         }
         return null;
     }
+
+    public void generateMobilefile(String filename){
+        try( ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename));
+             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(this.nomfich))) {
+            while(true){
+                try {
+                    SalesMan s  = (SalesMan)ois.readObject();
+                    if(s.getPhone() != null){
+                        Mobilephone p = s.getPhone();
+                        p.setBalance(10);
+                        oos.writeObject(p);
+                    }
+
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void workAll(){
+        String tmp = "temp.dat";
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(tmp));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(this.nomfich))){
+            while(true){
+                try {
+                   SalesMan s = (SalesMan) ois.readObject();
+                   s.work();
+                   oos.writeObject(s);
+                }
+                catch (EOFException e){
+                    break;
+                }
+            }
+
+        } catch (IOException | ClassNotFoundException e ) {
+            throw new RuntimeException(e);
+        }
+
+        File original = new File(this.nomfich);
+        File temp = new File(tmp);
+
+        if(!original.delete() || !temp.renameTo(original)){
+            throw new RuntimeException("error replacing file");
+        }
+    }
+
+    
 }
