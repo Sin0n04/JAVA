@@ -1,6 +1,8 @@
 package Company;
 
-public class Mobilephone {
+import java.io.Serializable;
+
+public class Mobilephone implements Serializable {
     String number;
     double balance;
 
