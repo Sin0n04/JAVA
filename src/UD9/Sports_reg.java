@@ -5,8 +5,11 @@ import java.awt.*;
 import java.util.HashMap;
 
 public class Sports_reg extends JFrame {
-    static HashMap<String,Integer> recomendations = new HashMap<>(){
-        //fill map after resting....
+    static HashMap<String,Integer> map = new HashMap<>(){
+        //done.
+        map.put("Swimming",12);
+        map.put("Running",40);
+        map.put("Weight-lifting",70);
     };
     public Sports_reg(Member[] members) throws HeadlessException {
         super("SPORT REGISTRATION");
@@ -19,6 +22,7 @@ public class Sports_reg extends JFrame {
         for (int i = 0; i < members.length; i++) {
             this.add( new JLabel(members[i].name));
             this.add(new JLabel(String.valueOf(members[i].age())));
+            this.add(new JLabel(map.get))//to revise later....
         }
 
         //age panel
