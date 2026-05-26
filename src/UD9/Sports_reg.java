@@ -5,12 +5,11 @@ import java.awt.*;
 import java.util.HashMap;
 
 public class Sports_reg extends JFrame {
-    static HashMap<String,Integer> map = new HashMap<>(){
-        //done.
-        map.put("Swimming",12);
-        map.put("Running",40);
-        map.put("Weight-lifting",70);
-    };
+    static HashMap<String,Integer> map = new HashMap<String,Integer>(){{
+        put("swimming",12);
+        put("running",40);
+        put("weight-lifting",70);
+    }};
     public Sports_reg(Member[] members) throws HeadlessException {
         super("SPORT REGISTRATION");
         this.setLayout(new GridLayout(4,members.length));
@@ -22,8 +21,19 @@ public class Sports_reg extends JFrame {
         for (int i = 0; i < members.length; i++) {
             this.add( new JLabel(members[i].name));
             this.add(new JLabel(String.valueOf(members[i].age())));
-            this.add(new JLabel(map.get))//to revise later....
+            if (members[i].age() <= map.get("swimming")){
+                this.add(new JLabel("Swimming"));
+            }
+            else {
+                if (members[i].age() <= map.get("running") && members[i].age() > map.get("swimming")){
+                    this.add(new JLabel("Running"));
+                }
+                else {
+                    this.add(new JLabel("weight-lifting"));
+                }
+            }
         }
+        this.setVisible(true);
 
         //age panel
     }
