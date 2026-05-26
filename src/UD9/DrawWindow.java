@@ -69,7 +69,7 @@ public class DrawWindow{
         frame.setVisible(true);
 
         //south panel
-        JPanel panelS = new JPanel();
+        JPanel panelS = new JPanel(new GridLayout(1,2));
         JButton delete = new JButton("Delete");
         delete.setEnabled(false);
         panelS.add(new JButton("Save"));
