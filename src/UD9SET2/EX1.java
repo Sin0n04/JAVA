@@ -94,7 +94,7 @@ public class EX1 extends JFrame implements MouseListener {
 
         question = new JLabel("");
         bottom.add(question);
-        response.addActionListener(new ActionListener() {
+        response.addActionListener(new DistanceListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Point p = list.getSelectedValue();
@@ -146,6 +146,7 @@ public class EX1 extends JFrame implements MouseListener {
             if(p != null){
                 question.setText("Distance from " + p + " to (0,0)?");
                 response.setEnabled(true);
+
             }
         }
         question.setText("");

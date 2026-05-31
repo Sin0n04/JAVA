@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DrawWindow{
-    private static ImageIcon redim(String filepath,int width, int height){
+    public static ImageIcon redim(String filepath,int width, int height){
         ImageIcon imgicn = new ImageIcon(filepath);
         Image image = imgicn.getImage();
         Image im = image.getScaledInstance(width,height,0);
