@@ -21,9 +21,9 @@ public class EcuationWindow extends JFrame implements ActionListener {
 
         double root = Math.pow(b, 2) - (4 * a * c);
 
-            if(a == 0){
-                throw new RootException("Not a Quadratic equation");
-            }
+        if(a == 0){
+            throw new RootException("Not a Quadratic equation");
+        }
 
         if(root < 0){
                 throw new RootException("imaginary solutions");
@@ -106,9 +106,14 @@ public class EcuationWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //after pressing button
+        int a = 0;
+        try {
+             a = Integer.parseInt(textA.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null,"Not a quadratic equation");
+        }
 
         try {
-            int a = Integer.parseInt(textA.getText());
             int b = Integer.parseInt(textB.getText());
             int c = Integer.parseInt(textC.getText());
 
